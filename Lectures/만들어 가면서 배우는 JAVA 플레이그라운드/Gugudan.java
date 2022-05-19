@@ -1,18 +1,17 @@
-import java.util.Scanner;
-
 public class Gugudan {
 	public static void main(String[] args) {
-		System.out.println("구구단 중 출력할 단은? ");
-		Scanner sc = new Scanner(System.in);
-		int number = sc.nextInt();
-		if (number < 2) {
-			System.out.println("값을 잘못 입력하셨습니다.");
-		} else if (number > 9) {
-			System.out.println("값을 잘못 입력하셨습니다.");
-		} else {
-			for (int i=1; i<10; i++) {
-				System.out.println(number * i);
-			}
+		/* 정수 9개를 저장할 수 있는 배열 생성 */
+		int[] result = new int[9];
+		for (int i=0; i < result.length; i++) {
+			/* 배열은 0부터 시작하기 때문에 1을 더해 준다. 2X1부터 시작하니까! */
+			result[i] = 2 * (i + 1);
+			System.out.println(result[i]);
+		}
+		
+		result = new int[9];
+		for (int i=0; i < result.length; i++) {
+			result[i] = 3 * (i + 1);
+			System.out.println(result[i]);
 		}
 	}
 }
