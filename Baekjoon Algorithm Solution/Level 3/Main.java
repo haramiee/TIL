@@ -13,7 +13,9 @@ public class Main{
 		StringTokenizer st;
 		for (int i=1; i<=T; i++) {
 			st = new StringTokenizer(br.readLine());
-			bw.write("Case #" + i + ": " + (Integer.parseInt(st.nextToken()) + Integer.parseInt(st.nextToken())) + "\n");
+			int A = Integer.parseInt(st.nextToken());
+			int B = Integer.parseInt(st.nextToken());
+			bw.write("Case #" + i + ": " + A + " + " + B + " = " + (A+B) + "\n");
 		}
 		bw.close();
 	}
