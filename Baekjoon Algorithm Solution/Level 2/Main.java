@@ -4,24 +4,23 @@ import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
 public class Main{
-    public static void main(String[] args) throws IOException {
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        StringTokenizer st = new StringTokenizer(br.readLine());
-        int A = Integer.parseInt(st.nextToken());
-        int B = Integer.parseInt(st.nextToken());
-        int hour, min;
-        if (B >= 45) {
-            min = B - 45;
-            System.out.println(A + " " + min);
-        } else if (B < 45) {
-            min = 60 - (45 - B);
-            if (A != 0) {
-                hour = A - 1;
-                System.out.println(hour + " " + min);
-            } else if (A == 0) {
-                int HOUR = 23;
-                System.out.println(HOUR + " " + min);
-            }
+	public static void main(String[] args) throws IOException {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		StringTokenizer st = new StringTokenizer(br.readLine());
+		
+		int HOUR = Integer.parseInt(st.nextToken());
+		int MINUTE = Integer.parseInt(st.nextToken());
+		int NEED = Integer.parseInt(br.readLine());
+        
+        /* 시간을 분으로 (★)치환해서 계산한 후 몫과 나머지로 시간과 분을 뽑아냄 */
+        int all  = HOUR*60 + MINUTE + NEED;
+        HOUR = all / 60;
+        MINUTE = all % 60;
+       
+        if (HOUR >= 24) {
+            HOUR -= 24;
         }
+        
+        System.out.println(HOUR + " " + MINUTE);
     }
 }
