@@ -7,16 +7,10 @@ public class Main {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
-        int A = Integer.parseInt(st.nextToken());
-        if (A >= 90)
-            System.out.println("A");
-        else if (A >= 80)
-            System.out.println("B");
-        else if (A >= 70)
-            System.out.println("C");
-        else if (A >= 60)
-            System.out.println("D");
+        int YEAR = Integer.parseInt(st.nextToken());
+        if ((YEAR%4 == 0 && YEAR%100 != 0) || YEAR%400 == 0)
+            System.out.println("1");
         else
-            System.out.println("F");
+            System.out.println("0");
     }
 }
