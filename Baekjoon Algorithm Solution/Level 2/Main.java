@@ -1,26 +1,20 @@
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.util.StringTokenizer;
+import java.util.Scanner;
 
 public class Main{
-	public static void main(String[] args) throws IOException {
-		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		StringTokenizer st = new StringTokenizer(br.readLine());
-		
-		int HOUR = Integer.parseInt(st.nextToken());
-		int MINUTE = Integer.parseInt(st.nextToken());
-		int NEED = Integer.parseInt(br.readLine());
-        
-        /* 시간을 분으로 (★)치환해서 계산한 후 몫과 나머지로 시간과 분을 뽑아냄 */
-        int all  = HOUR*60 + MINUTE + NEED;
-        HOUR = all / 60;
-        MINUTE = all % 60;
-       
-        if (HOUR >= 24) {
-            HOUR -= 24;
-        }
-        
-        System.out.println(HOUR + " " + MINUTE);
-    }
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int a = sc.nextInt();
+		int b = sc.nextInt();
+		int c = sc.nextInt();
+		if (a == b && b == c) {
+			System.out.println(10000 + (a * 1000));
+		} else if (a == b || a == c) {
+			System.out.println(1000 + (a * 100));
+		} else if (b == c) {
+			System.out.println(1000 + (b * 100));
+		} else {
+			int d = Math.max((Math.max(a, b)), c);
+			System.out.println(d * 100);
+		}
+	}
 }
