@@ -5,6 +5,11 @@ import java.io.InputStreamReader;
 public class Main{
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		System.out.println(br.read());
+		br.readLine();
+		int sum = 0;
+		for (byte val : br.readLine().getBytes()) {
+			sum += (val - 48);
+		}
+		System.out.println(sum);
 	}
 }
