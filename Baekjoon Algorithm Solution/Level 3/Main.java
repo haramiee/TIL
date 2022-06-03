@@ -6,16 +6,14 @@ import java.util.StringTokenizer;
 public class Main{
 	public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        StringTokenizer st;
         StringBuilder sb = new StringBuilder();
-        while (true) {
-            st = new StringTokenizer(br.readLine(), " ");
-            int A = Integer.parseInt(st.nextToken());
-            int B = Integer.parseInt(st.nextToken());
-            if (A == 0 && B == 0) {
-                break;
-            }
-            sb.append(A+B).append("\n");
+        StringTokenizer st;
+        String in;
+        while ((in = br.readLine()) != null) {
+            st = new StringTokenizer(in, " ");
+            int a = Integer.parseInt(st.nextToken());
+            int b = Integer.parseInt(st.nextToken());
+            sb.append(a+b).append("\n");
         }
         System.out.println(sb);
     }
