@@ -7,17 +7,24 @@ import java.util.StringTokenizer;
 public class Main {
 	public static void main(String[] args) throws IOException{
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		int N = Integer.parseInt(br.readLine());
-		StringTokenizer st = new StringTokenizer(br.readLine(), " ");
-		
-		int idx = 0;
-		int[] ar = new int[N];
-		while (st.hasMoreTokens()) {
-			ar[idx] = Integer.parseInt(st.nextToken());
-			idx++;
+		int[] ar = new int[9];
+		for (int i = 0; i < 9; i++) {
+			ar[i] = Integer.parseInt(br.readLine());
 		}
 		
-		Arrays.sort(ar);
-		System.out.println(ar[0] + " " + ar[N-1]);
+		int max = 0;
+		int idx = 0;
+		int cnt = 0;
+		
+		for (int val : ar) {
+			cnt++;
+			if (val > max) {
+				max = value;
+				idx = cnt;
+			}
+		}
+		
+		System.out.println(max);
+		System.out.println(idx);
 	}
 }
